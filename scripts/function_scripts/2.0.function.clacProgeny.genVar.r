@@ -28,8 +28,6 @@ CalcD <- function(linkInfoDf, k) {
   
   ### LD parameter which is common to all cross pairs
   D_12 <- 0.25 * (1 - ck) * (1 - 2 * c1)
-  # diag(D_12) <- 0.25 / 4 ### 1/16 same as UCPC
-  diag(D_12) <- 0.25
   D_34 <- D_12
   
   if (k == 1) {
@@ -40,10 +38,8 @@ CalcD <- function(linkInfoDf, k) {
     
   } else {
     
-    t <- k - 2
+    t <- k - 1
   D_13 <- 0.25 * (1 - 2 * ck - (0.5 * (1 - 2 * c1))^(t))
-  # diag(D_13) <- 0.25 / 4 ### 1/16
-  diag(D_13) <- 0.25
   D_14 <- D_23 <- D_24 <- D_13
   
   }
